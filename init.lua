@@ -115,8 +115,16 @@ vim.keymap.set("n", "<C-g>", function()
   local word = vim.fn.expand("<cword>")
   vim.cmd("grep " .. vim.fn.shellescape(word))
 end, { noremap = true, silent = true })
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+  pattern = "grep",
+  callback = function()
+    if #vim.fn.getqflist() > 0 then
+      vim.cmd("copen")
+    end
+  end,
+})
 -- Use git grep for :grep
-vim.opt.grepprg = "git grep -n"
+vim.opt.grepprg = 'git grep -n $* -- :/'
 vim.opt.grepformat = "%f:%l:%m"
 
 -- mark columns after 100

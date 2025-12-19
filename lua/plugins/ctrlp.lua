@@ -9,6 +9,7 @@ return {
     vim.g.ctrlp_match_window = "bottom,order:ttb,min:1,max:20,results:30"
     vim.g.ctrlp_custom_ignore = "node_modules\\|.DS_Store\\|.git\\|cmake_.*"
     vim.g.ctrlp_regexp = 1
+    vim.g.ctrlp_use_caching = 1
 
     -- Always-available keymaps
     vim.keymap.set({ "n", "i", "t" }, "<C-p>", "<cmd>CtrlP<CR>", { noremap = true, silent = true })

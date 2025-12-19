@@ -1,6 +1,6 @@
 return {
   "tpope/vim-fugitive",
-  cmd = { "Git", "G" },  -- lazy-load when running Git commands
+  cmd = { "Git", "G", "Gdiffsplit" },  -- lazy-load when running Git commands
   keys = {
     { "<leader>gs", ":Git<CR>", desc = "Git status" },
     { "<leader>gc", ":Git commit<CR>", desc = "Git commit" },
