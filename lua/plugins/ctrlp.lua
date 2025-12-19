@@ -16,9 +16,11 @@ return {
     vim.keymap.set({ "n", "i", "t" }, "<C-b>", "<cmd>CtrlPBuffer<CR>", { noremap = true, silent = true })
 
     vim.g.ctrlp_user_command = {
-      "git ls-files",
+        ".git",
+        "git --no-optional-locks ls-files --cached --others --exclude-standard --no-recurse-submodules"
     }
-    vim.g.ctrlp_working_path_mode = "r"
+    vim.g.ctrlp_working_path_mode = "ra"
     vim.g.ctrlp_show_hidden = 0
+    vim.g.ctrlp_max_files=0 
   end,
 }
